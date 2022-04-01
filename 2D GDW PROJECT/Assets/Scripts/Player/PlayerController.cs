@@ -10,7 +10,8 @@ public class PlayerController : MonoBehaviour
     public LayerMask ObjectLayer;
     public LayerMask Layer;
 
-    AudioSource audio;
+    private AudioSource _audioSource;
+    [SerializeField] private AudioClip walking;
 
     //Player Movement
     [SerializeField] private float playerSpeed;
@@ -25,6 +26,7 @@ public class PlayerController : MonoBehaviour
     public float dashForce;
     public float delayTime;
     private float save;
+    private float _walkingSoundTimer = 0.4f;
     Vector2 currentPos;
 
     Animator animator;
@@ -87,12 +89,20 @@ public class PlayerController : MonoBehaviour
         Time.timeScale = 1;
         GameRunning = true;
 
-        audio = GetComponent<AudioSource>();
+        _audioSource = GetComponent<AudioSource>();
     }
 
     void Update()
     {
-        PlaySound();
+        if (_walkingSoundTimer > 0)
+        {
+            _walkingSoundTimer -= Time.deltaTime;
+        }
+        else
+        {
+            PlaySound();
+            _walkingSoundTimer = 0.4f;
+        }
 
         Debug.DrawRay(transform.position, movementDir * dashForce, Color.green);
         
@@ -118,6 +128,7 @@ public class PlayerController : MonoBehaviour
         animator.SetBool("Isgrounded", isGrounded);
     }
 
+
     
     public void HandleLanding()
     {
@@ -130,7 +141,6 @@ public class PlayerController : MonoBehaviour
         if (hitLeft.collider != null || hitRight.collider != null)
         {
             isGrounded = true;
-            Debug.Log("isgrounded true");
         }
         else
         {
@@ -440,11 +450,7 @@ public class PlayerController : MonoBehaviour
     {
         if (isWalking)
         {
-            audio.Play();
-        }
-        else
-        {
-            audio.Stop();
+            _audioSource.PlayOneShot(walking);
         }
     }
 }

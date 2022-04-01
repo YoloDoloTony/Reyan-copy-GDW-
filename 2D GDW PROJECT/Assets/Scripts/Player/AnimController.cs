@@ -8,7 +8,6 @@ public class AnimController : MonoBehaviour
     public GameObject player;
     PlayerController playerC;
 
-    string animPlaying = idle;
 
     const string walk = "Walk";
     const string flip = "flip";
