@@ -14,7 +14,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private AudioClip walking;
 
     //Player Movement
-    [SerializeField] private float playerSpeed;
+    [SerializeField] public float playerSpeed;
     private Transform _leftFoot;
     private Transform _rightFoot;
 
