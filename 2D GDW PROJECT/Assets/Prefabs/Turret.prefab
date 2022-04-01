@@ -24,14 +24,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 31762483103836026}
-  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 0.01, y: 0.5175, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.01, y: 0.117, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 7903032063994988579}
   m_Father: {fileID: 31762483141586774}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &31762483103836027
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -72,7 +72,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -3585406294598796459, guid: 339c1fbf9c5712846831b93b24749054, type: 3}
+  m_Sprite: {fileID: -5238652305990636203, guid: 339c1fbf9c5712846831b93b24749054, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -108,14 +108,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 31762483141586772}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
   m_LocalPosition: {x: -1.97, y: -0.53, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children:
   - {fileID: 31762483103835972}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
 --- !u!212 &31762483141586773
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -156,8 +156,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -5238652305990636203, guid: 339c1fbf9c5712846831b93b24749054, type: 3}
-  m_Color: {r: 0.5887635, g: 0.237362, b: 0.990566, a: 1}
+  m_Sprite: {fileID: 574594807807208185, guid: 339c1fbf9c5712846831b93b24749054, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -181,10 +181,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   detectRange: 5
   player: {fileID: 0}
+  playerTran: {fileID: 0}
   barrel: {fileID: 31762483103836026}
   gunPos: {fileID: 7903032063994988579}
   bullet: {fileID: 7458245197862731453, guid: c32e2c7c904ab5340b3666e7d3d868bd, type: 3}
-  bulletSpeed: 30
+  bulletSpeed: 80
   fireRate: 2
 --- !u!1 &2379857576136066191
 GameObject:
@@ -210,7 +211,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2379857576136066191}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.31, y: 0, z: 0}
+  m_LocalPosition: {x: -0.077, y: 0.614, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 31762483103835972}

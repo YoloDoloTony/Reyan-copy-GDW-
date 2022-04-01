@@ -10,6 +10,8 @@ public class PlayerController : MonoBehaviour
     public LayerMask ObjectLayer;
     public LayerMask Layer;
 
+    AudioSource audio;
+
     //Player Movement
     [SerializeField] private float playerSpeed;
     private Transform _leftFoot;
@@ -84,10 +86,14 @@ public class PlayerController : MonoBehaviour
         save = delayTime;
         Time.timeScale = 1;
         GameRunning = true;
+
+        audio = GetComponent<AudioSource>();
     }
 
     void Update()
     {
+        PlaySound();
+
         Debug.DrawRay(transform.position, movementDir * dashForce, Color.green);
         
         MovePlayer();
@@ -390,13 +396,7 @@ public class PlayerController : MonoBehaviour
     {
         isFlip = false;
 
-        if (collision.gameObject.CompareTag("BulletBilly"))
-        {
-            Destroy(collision.gameObject);
-            isDead = true;
-            Time.timeScale = 0;
-        } 
-        else
+        
              if (collision.gameObject.CompareTag("Death"))
         {
             isDead = true;
@@ -409,6 +409,13 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.CompareTag("platform"))
         {
             transform.parent = null;
+        }
+
+        if (collision.gameObject.CompareTag("BulletBilly"))
+        {
+            Destroy(collision.gameObject);
+            isDead = true;
+            Time.timeScale = 0;
         }
     }
 
@@ -426,6 +433,18 @@ public class PlayerController : MonoBehaviour
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
                 Time.timeScale = 1;
             }
+        }
+    }
+
+    void PlaySound()
+    {
+        if (isWalking)
+        {
+            audio.Play();
+        }
+        else
+        {
+            audio.Stop();
         }
     }
 }
