@@ -1,7 +1,25 @@
 fileFormatVersion: 2
 guid: 339c1fbf9c5712846831b93b24749054
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -5238652305990636203
+    second: Turret_Sprite_Sheet_0
+  - first:
+      213: -3585406294598796459
+    second: Turret_Sprite_Sheet_1
+  - first:
+      213: 574594807807208185
+    second: Turret_Sprite_Sheet_2
+  - first:
+      213: 6241200376672030567
+    second: Turret_Sprite_Sheet_3
+  - first:
+      213: 5685439923018176582
+    second: Turret_Sprite_Sheet_4
+  - first:
+      213: 5113252311419218329
+    second: Turret_Sprite_Sheet_5
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -89,11 +107,137 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Turret_Sprite_Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 16
+        width: 12
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 1, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55da5a7bb719c47b0800000000000000
+      internalID: -5238652305990636203
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Turret_Sprite_Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 36
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55b3dfaa8f31e3ec0800000000000000
+      internalID: -3585406294598796459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Turret_Sprite_Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9fae121feee59f700800000000000000
+      internalID: 574594807807208185
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Turret_Sprite_Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 2
+        width: 26
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76f029fdca23d9650800000000000000
+      internalID: 6241200376672030567
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Turret_Sprite_Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 17
+        width: 7
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 648925bbc7db6ee40800000000000000
+      internalID: 5685439923018176582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Turret_Sprite_Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 5
+        width: 19
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9996615d2ebe5f640800000000000000
+      internalID: 5113252311419218329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 58c34f8683610b041913428343e16d48
     internalID: 0
     vertices: []
     indices: 
