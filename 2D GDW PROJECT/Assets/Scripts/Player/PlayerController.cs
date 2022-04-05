@@ -406,8 +406,8 @@ public class PlayerController : MonoBehaviour
     {
         isFlip = false;
 
-        
-             if (collision.gameObject.CompareTag("Death"))
+
+        if (collision.gameObject.CompareTag("Death"))
         {
             isDead = true;
             Time.timeScale = 0;
