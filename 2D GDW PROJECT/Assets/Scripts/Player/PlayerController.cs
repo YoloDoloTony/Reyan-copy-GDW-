@@ -7,8 +7,6 @@ public class PlayerController : MonoBehaviour
 {
     private Rigidbody2D rb;
 
-    public List<GravHinge> gravHinge;
-
     public LayerMask ObjectLayer;
     public LayerMask Layer;
 
@@ -51,6 +49,8 @@ public class PlayerController : MonoBehaviour
 
     private ERotationStates rotationState;
 
+
+
     public void ChangeGravity(ERotationStates newRotation)
     {
         //This is an enum
@@ -61,34 +61,18 @@ public class PlayerController : MonoBehaviour
             case ERotationStates.Up:
                 Physics2D.gravity = new Vector2(0, 9.81f);
                 transform.eulerAngles = new Vector3(0, 0, -180);
-                for (int i = 0; i < gravHinge.Count; i++)
-                {
-                    gravHinge[i].TargetRotation(Quaternion.AngleAxis(90, transform.forward));
-                }
                 break;
             case ERotationStates.Down:
                 Physics2D.gravity = new Vector2(0, -9.81f);
                 transform.eulerAngles = new Vector3(0, 0, 0);
-                for (int i = 0; i < gravHinge.Count; i++)
-                {
-                    gravHinge[i].TargetRotation(Quaternion.AngleAxis(-90, transform.forward));
-                }
                 break;
             case ERotationStates.Left:
                 Physics2D.gravity = new Vector2(9.81f, 0);
                 transform.eulerAngles = new Vector3(0, 0, 90);
-                for (int i = 0; i < gravHinge.Count; i++)
-                {
-                    gravHinge[i].TargetRotation(Quaternion.AngleAxis(0, transform.forward));
-                }
                 break;
             case ERotationStates.Right:
                 Physics2D.gravity = new Vector2(-9.81f, 0);
                 transform.eulerAngles = new Vector3(0, 0, -90);
-                for (int i = 0; i < gravHinge.Count; i++)
-                {
-                    gravHinge[i].TargetRotation(Quaternion.AngleAxis(-180, transform.forward));
-                }
                 break;
         }
     }
