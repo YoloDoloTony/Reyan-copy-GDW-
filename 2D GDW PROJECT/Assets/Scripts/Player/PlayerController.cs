@@ -362,8 +362,6 @@ public class PlayerController : MonoBehaviour
         if (delayTime - Time.realtimeSinceStartup < 0)
         {
             return true;
-
-         
         }
         else
         {
