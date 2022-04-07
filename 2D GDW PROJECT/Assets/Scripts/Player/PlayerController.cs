@@ -36,7 +36,7 @@ public class PlayerController : MonoBehaviour
     //Gravity Variables
     bool isGrounded;
     bool flipCooldown = true;
-
+    bool isDash = false;
     bool GameRunning = true;
     bool isDead = false;
 
@@ -354,6 +354,7 @@ public class PlayerController : MonoBehaviour
     public void Dash()
     {
         rb.velocity = movementDir * dashForce;
+        isDash = true;
     }
 
     // checks if the delay is up or not
@@ -376,19 +377,6 @@ public class PlayerController : MonoBehaviour
         delayTime += Time.realtimeSinceStartup + save;
     }
 
-    private bool AbleToDash()
-    {
-        if (facingRight)
-        {
-            return Physics2D.Raycast(rb.transform.position, Vector2.right, dashForce, ObjectLayer).collider == null;
-        }
-        else
-        {
-            return Physics2D.Raycast(rb.transform.position, Vector2.right * -1, dashForce, ObjectLayer).collider == null;
-        }
-    }
-
-
     public bool GetIsRunning()
     {
         return GameRunning;
@@ -407,6 +395,7 @@ public class PlayerController : MonoBehaviour
     {
         return isFlip;
     }
+
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
