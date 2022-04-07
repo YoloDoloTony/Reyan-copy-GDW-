@@ -136,7 +136,7 @@ public class PlayerController : MonoBehaviour
 
         HandleLanding();
 
-        if (Input.GetKeyDown(KeyCode.LeftShift) && AbleToDash())
+        if (Input.GetKeyDown(KeyCode.LeftShift))
         {
             Dash();
         }
@@ -353,10 +353,7 @@ public class PlayerController : MonoBehaviour
 
     public void Dash()
     {
-
-        currentPos += movementDir * dashForce;
-        transform.position = currentPos;
-        ResetTimer();
+        rb.velocity = movementDir * dashForce;
     }
 
     // checks if the delay is up or not
@@ -364,14 +361,9 @@ public class PlayerController : MonoBehaviour
     {
         if (delayTime - Time.realtimeSinceStartup < 0)
         {
-            if (AbleToDash())
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            return true;
+
+         
         }
         else
         {
