@@ -1,13 +1,22 @@
 fileFormatVersion: 2
-guid: c9214b3955da767459fb446b8032f923
+guid: a51bc23da521f7a49bcd1db18f457da8
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8475784037756380876
-    second: Floor_Trap_0
+      213: 6703449046077117904
+    second: Lever anim_0
   - first:
-      213: -2397903716438228195
-    second: Floor_Trap_1
+      213: -5762126655020820649
+    second: Lever anim_1
+  - first:
+      213: -8381382154877942716
+    second: Lever anim_2
+  - first:
+      213: -8904458750770368070
+    second: Lever anim_3
+  - first:
+      213: -2825643833303955092
+    second: Lever anim_4
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -38,7 +47,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
+    filterMode: 0
     aniso: -1
     mipBias: -100
     wrapU: 1
@@ -73,7 +82,7 @@ TextureImporter:
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
-    textureFormat: 4
+    textureFormat: -1
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
@@ -85,7 +94,7 @@ TextureImporter:
     buildTarget: Standalone
     maxTextureSize: 2048
     resizeAlgorithm: 0
-    textureFormat: 4
+    textureFormat: -1
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
@@ -97,43 +106,106 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Floor_Trap_0
+      name: Lever anim_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 24
-        width: 64
-        height: 8
-      alignment: 9
-      pivot: {x: 0, y: 0.5}
+        x: 3
+        y: 93
+        width: 32
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cc6256bfca800a570800000000000000
-      internalID: 8475784037756380876
+      spriteID: 0d59b59146f670d50800000000000000
+      internalID: 6703449046077117904
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Floor_Trap_1
+      name: Lever anim_1
       rect:
         serializedVersion: 2
-        x: 0
-        y: 8
-        width: 64
-        height: 8
-      alignment: 9
-      pivot: {x: 0, y: 0.5}
+        x: 48
+        y: 92
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d134c18464fe8bed0800000000000000
-      internalID: -2397903716438228195
+      spriteID: 7579ca81650d800b0800000000000000
+      internalID: -5762126655020820649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lever anim_2
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 56
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 444c3bb26595fab80800000000000000
+      internalID: -8381382154877942716
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lever anim_3
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 56
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab1b63ba1f10d6480800000000000000
+      internalID: -8904458750770368070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Lever anim_4
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 20
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c69052e87eb49c8d0800000000000000
+      internalID: -2825643833303955092
       vertices: []
       indices: 
       edges: []
@@ -141,7 +213,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 37bec5f153d9cdc45a7567d8ac394f9f
+    spriteID: 776f2b7aa02dd3949985a5f6ae986b85
     internalID: 0
     vertices: []
     indices: 
