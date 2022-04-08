@@ -4,15 +4,17 @@ using UnityEngine;
 
 public class Lever : MonoBehaviour
 {
-    bool isToggled = true;
+    bool isToggled = false;
     bool canInteract;
     public GameObject doorObject;
+    Animator Animator;
 
     SpriteRenderer SpriteRenderer;
 
     private void Awake()
     {
         SpriteRenderer = GetComponent<SpriteRenderer>();
+        Animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -22,6 +24,7 @@ public class Lever : MonoBehaviour
         {
             isToggled = !isToggled;
             doorObject.SetActive(isToggled);
+            Animator.SetBool("flipped", isToggled);
         }
 
         /*if (isToggled)
