@@ -12,8 +12,7 @@ public class PlayerController : MonoBehaviour
     public LayerMask ObjectLayer;
     public LayerMask Layer;
 
-    private AudioSource _audioSource;
-    [SerializeField] private AudioClip walking;
+    public AudioManager _audioManager;
 
     //Player Movement
     [SerializeField] public float playerSpeed;
@@ -104,8 +103,6 @@ public class PlayerController : MonoBehaviour
         save = delayTime;
         Time.timeScale = 1;
         GameRunning = true;
-
-        _audioSource = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -116,11 +113,9 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-            PlaySound();
+            PlayWalk();
             _walkingSoundTimer = 0.4f;
         }
-
-        Debug.DrawRay(transform.position, movementDir * dashForce, Color.green);
         
         MovePlayer();
 
@@ -144,16 +139,12 @@ public class PlayerController : MonoBehaviour
         animator.SetBool("Isgrounded", isGrounded);
     }
 
-
     
     public void HandleLanding()
     {
-        
         RaycastHit2D hitLeft = Physics2D.Raycast(_leftFoot.position, -transform.up, 0.75f, Layer);
         RaycastHit2D hitRight = Physics2D.Raycast(_rightFoot.position, -transform.up, 0.75f, Layer);
 
-        Debug.DrawRay(_leftFoot.position, -transform.up * 0.75f, Color.green);
-        Debug.DrawRay(_rightFoot.position, -transform.up * 0.75f, Color.green);
         if (hitLeft.collider != null || hitRight.collider != null)
         {
             isGrounded = true;
@@ -338,6 +329,7 @@ public class PlayerController : MonoBehaviour
     {
         if (isFlip)
         {
+            _audioManager.Play("Flip");
             StartCoroutine(FlipCooldown());
             playerSpeed = 0;
             yield return new WaitForSeconds(1);
@@ -349,7 +341,6 @@ public class PlayerController : MonoBehaviour
         }
         
     }
-
 
     public void Dash()
     {
@@ -396,15 +387,14 @@ public class PlayerController : MonoBehaviour
         return isFlip;
     }
 
-
     private void OnCollisionEnter2D(Collision2D collision)
     {
         isFlip = false;
 
-
         if (collision.gameObject.CompareTag("Death"))
         {
             isDead = true;
+            _audioManager.Play("Death");
             Time.timeScale = 0;
         }
     }
@@ -420,6 +410,7 @@ public class PlayerController : MonoBehaviour
         {
             Destroy(collision.gameObject);
             isDead = true;
+            _audioManager.Play("Death");
             Time.timeScale = 0;
         }
     }
@@ -441,11 +432,11 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    void PlaySound()
+    void PlayWalk()
     {
         if (isWalking)
         {
-            _audioSource.PlayOneShot(walking);
+            _audioManager.Play("PlayerWalking");
         }
     }
 }

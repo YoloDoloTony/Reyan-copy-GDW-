@@ -79,7 +79,8 @@ public class Turret : MonoBehaviour
 
     private void Shoot()
     {
-       GameObject bulletPrefab = Instantiate(bullet, gunPos.position, Quaternion.identity);
+        GameObject bulletPrefab = Instantiate(bullet, gunPos.position, Quaternion.identity);
+        FindObjectOfType<AudioManager>().Play("LaserShoot");
 
         bulletPrefab.GetComponent<Rigidbody2D>().AddForce(direction * bulletSpeed);
     }
