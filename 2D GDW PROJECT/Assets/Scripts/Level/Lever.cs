@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Lever : MonoBehaviour
 {
-    bool isToggled = false;
+    bool isToggled = true;
     bool canInteract;
     public GameObject doorObject;
     Animator Animator;
