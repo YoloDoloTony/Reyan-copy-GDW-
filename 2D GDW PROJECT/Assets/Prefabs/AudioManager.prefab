@@ -69,3 +69,8 @@ MonoBehaviour:
     volume: 0.1
     loop: 0
     source: {fileID: 0}
+  - name: Door
+    clip: {fileID: 8300000, guid: d1b04bf805e3d354f8bd5118ee0d1591, type: 3}
+    volume: 0.5
+    loop: 0
+    source: {fileID: 0}

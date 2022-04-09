@@ -39,6 +39,7 @@ public class PlayerController : MonoBehaviour
     bool GameRunning = true;
     bool isDead = false;
 
+    bool onPlatform = false;
 
     public enum ERotationStates
     {
@@ -138,7 +139,6 @@ public class PlayerController : MonoBehaviour
 
         animator.SetBool("Isgrounded", isGrounded);
     }
-
     
     public void HandleLanding()
     {
@@ -146,6 +146,10 @@ public class PlayerController : MonoBehaviour
         RaycastHit2D hitRight = Physics2D.Raycast(_rightFoot.position, -transform.up, 0.75f, Layer);
 
         if (hitLeft.collider != null || hitRight.collider != null)
+        {
+            isGrounded = true;
+        }
+        else if (onPlatform)
         {
             isGrounded = true;
         }
@@ -397,6 +401,19 @@ public class PlayerController : MonoBehaviour
             _audioManager.Play("Death");
             Time.timeScale = 0;
         }
+
+        if (collision.gameObject.CompareTag("MovingPlatform"))
+        {
+            onPlatform = true;
+        }
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("MovingPlatform"))
+        {
+            onPlatform = false;
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -423,6 +440,10 @@ public class PlayerController : MonoBehaviour
 
             GUIStyle buttonStyle = new GUIStyle(GUI.skin.button);
             buttonStyle.fontSize = 50;
+            buttonStyle.normal.textColor = Color.red;
+            buttonStyle.hover.textColor = Color.red;
+            buttonStyle.normal.background = (Texture2D)Resources.Load("");
+
             if (GUI.Button(new Rect(Screen.width / 2 - 350, Screen.height / 2 - 210, 700, 420), "YOU DIED!\n\nClick to Restart", buttonStyle))
             {
                 Physics2D.gravity = new Vector2(0, -9.81f);

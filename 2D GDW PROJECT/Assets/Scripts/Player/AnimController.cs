@@ -8,7 +8,6 @@ public class AnimController : MonoBehaviour
     public GameObject player;
     PlayerController playerC;
 
-
     const string walk = "Walk";
     const string flip = "flip";
     const string idle = "idle";
@@ -73,16 +72,4 @@ public class AnimController : MonoBehaviour
             Animator.SetBool("IsDead", true);
         }
     }
-
-    //void ChangeAnim(string incomingAnim)
-    //{
-    //    if (incomingAnim == animPlaying)
-    //    {
-    //        return;
-    //    }
-
-    //    Animator.Play(incomingAnim);
-
-    //    animPlaying = incomingAnim;
-    //}
 }

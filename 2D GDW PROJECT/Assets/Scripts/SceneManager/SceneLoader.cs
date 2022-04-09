@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -7,7 +8,14 @@ public class SceneLoader : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            StartCoroutine(LoadScene());
         }
+    }
+
+    IEnumerator LoadScene()
+    {
+        FindObjectOfType<AudioManager>().Play("Door");
+        yield return new WaitForSeconds(1.4f);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }

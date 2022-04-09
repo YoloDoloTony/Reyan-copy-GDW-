@@ -7,6 +7,7 @@ public class Lever : MonoBehaviour
     bool isToggled = true;
     bool canInteract;
     public GameObject doorObject;
+    public GameObject tutPopup;
 
     private void Awake()
     {
@@ -19,6 +20,7 @@ public class Lever : MonoBehaviour
         {
             isToggled = !isToggled;
             doorObject.SetActive(isToggled);
+            tutPopup.SetActive(isToggled);
             Animator.SetBool("triggered", isToggled);
         }
     }
