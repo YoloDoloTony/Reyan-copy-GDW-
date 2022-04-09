@@ -20,7 +20,12 @@ public class Lever : MonoBehaviour
         {
             isToggled = !isToggled;
             doorObject.SetActive(isToggled);
-            tutPopup.SetActive(isToggled);
+
+            if (tutPopup != null)
+            {
+                tutPopup.SetActive(isToggled);
+            }
+
             Animator.SetBool("triggered", isToggled);
         }
     }

@@ -4,10 +4,13 @@ using UnityEngine.SceneManagement;
 
 public class SceneLoader : MonoBehaviour
 {
+    public GameObject closedDoor;
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
+            closedDoor.SetActive(false);
             StartCoroutine(LoadScene());
         }
     }
