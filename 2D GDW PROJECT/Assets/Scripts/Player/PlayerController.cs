@@ -340,7 +340,7 @@ public class PlayerController : MonoBehaviour
             SwitchGravity();
             yield return new WaitForSeconds(0.05f);
 
-            playerSpeed = 10;
+            playerSpeed = 15;
         }
         
     }
