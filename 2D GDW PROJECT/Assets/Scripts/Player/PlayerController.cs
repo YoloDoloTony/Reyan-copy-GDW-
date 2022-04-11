@@ -35,7 +35,7 @@ public class PlayerController : MonoBehaviour
     //Gravity Variables
     bool isGrounded;
     bool flipCooldown = true;
-    bool isDash = false;
+    //bool isDash = false;
     bool GameRunning = true;
     bool isDead = false;
 
@@ -132,10 +132,10 @@ public class PlayerController : MonoBehaviour
 
         HandleLanding();
 
-        if (Input.GetKeyDown(KeyCode.LeftShift))
+       /* if (Input.GetKeyDown(KeyCode.LeftShift))
         {
             Dash();
-        }
+        } */
 
         animator.SetBool("Isgrounded", isGrounded);
     }
@@ -346,11 +346,11 @@ public class PlayerController : MonoBehaviour
         
     }
 
-    public void Dash()
+    /* public void Dash()
     {
         rb.velocity = movementDir * dashForce;
         isDash = true;
-    }
+    } */
 
     // checks if the delay is up or not
     public bool CanDash()
