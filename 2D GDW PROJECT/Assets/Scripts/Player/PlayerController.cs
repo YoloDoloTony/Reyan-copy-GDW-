@@ -28,7 +28,6 @@ public class PlayerController : MonoBehaviour
     public float delayTime;
     private float save;
     private float _walkingSoundTimer = 0.4f;
-    Vector2 currentPos;
 
     Animator animator;
 
@@ -350,7 +349,7 @@ public class PlayerController : MonoBehaviour
     {
         rb.velocity = movementDir * dashForce;
         isDash = true;
-    } */
+    }
 
     // checks if the delay is up or not
     public bool CanDash()
@@ -370,7 +369,7 @@ public class PlayerController : MonoBehaviour
     public void ResetTimer()
     {
         delayTime += Time.realtimeSinceStartup + save;
-    }
+    }*/
 
     public bool GetIsRunning()
     {
