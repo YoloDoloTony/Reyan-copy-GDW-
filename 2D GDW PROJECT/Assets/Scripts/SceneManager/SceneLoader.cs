@@ -10,6 +10,7 @@ public class SceneLoader : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
+            FindObjectOfType<CameraMovement>().TriggerShake(1.4f, 0.01f);
             closedDoor.SetActive(false);
             StartCoroutine(LoadScene());
         }

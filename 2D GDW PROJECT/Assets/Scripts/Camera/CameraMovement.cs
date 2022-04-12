@@ -13,6 +13,36 @@ public class CameraMovement : MonoBehaviour
     [SerializeField] float levelMinY;
     [SerializeField] float levelMaxY;
 
+    //Shake Variables
+    Vector3 initialPosition;
+
+    private float shakeDuration = 0f;
+    private float shakeMagnitude = 0f;
+    private float dampingSpeed = 1.0f;
+
+    void Update()
+    {
+        initialPosition = transform.localPosition;
+
+        if (shakeDuration > 0)
+        {
+            transform.localPosition = initialPosition + Random.insideUnitSphere * shakeMagnitude;
+
+            shakeDuration -= Time.deltaTime * dampingSpeed;
+        }
+        else
+        {
+            shakeDuration = 0f;
+            transform.localPosition = initialPosition;
+        }
+    }
+
+    public void TriggerShake(float duration, float magnitude)
+    {
+        shakeMagnitude = magnitude;
+        shakeDuration = duration;
+    }
+
     // Update is called once per frame
     void FixedUpdate()
     {
