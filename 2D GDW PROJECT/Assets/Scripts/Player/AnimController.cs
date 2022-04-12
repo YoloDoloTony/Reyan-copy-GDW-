@@ -56,7 +56,6 @@ public class AnimController : MonoBehaviour
         }
     }
 
-
     void CheckIdle()
     {
         if (!playerC.GetIsWalking())

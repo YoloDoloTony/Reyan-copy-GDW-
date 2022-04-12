@@ -438,12 +438,12 @@ public class PlayerController : MonoBehaviour
             GameRunning = false;
 
             GUIStyle buttonStyle = new GUIStyle(GUI.skin.button);
-            buttonStyle.fontSize = 50;
+            buttonStyle.fontSize = 30;
             buttonStyle.normal.textColor = Color.red;
             buttonStyle.hover.textColor = Color.red;
             buttonStyle.normal.background = (Texture2D)Resources.Load("");
 
-            if (GUI.Button(new Rect(Screen.width / 2 - 350, Screen.height / 2 - 210, 700, 420), "YOU DIED!\n\nClick to Restart", buttonStyle))
+            if (GUI.Button(new Rect(Screen.width / 2 - 150, Screen.height / 12, 300, 150), "YOU DIED!\n\nClick to Restart", buttonStyle))
             {
                 Physics2D.gravity = new Vector2(0, -9.81f);
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
