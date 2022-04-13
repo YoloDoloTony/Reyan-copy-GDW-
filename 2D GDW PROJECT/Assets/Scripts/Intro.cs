@@ -11,7 +11,7 @@ public class Intro : MonoBehaviour
 
     IEnumerator PlayIntro()
     {
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(4);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }
